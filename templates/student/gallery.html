@@ -1,0 +1,54 @@
+{% extends 'student/basic.html' %}
+{% block title %}Gallery{% endblock title %}
+{% block css %}
+<style>
+.headi{font-size: 2.3vw; text-align: center; text-decoration: underline; margin-top: 3.5%; font-family: Itim; color: red;}
+.detail{font-family: Itim; font-size: 3vw; color:orangered; text-decoration: underline; transition: all 0.3s;}
+.detail:hover{color: yellow; font-size: 3.5vw;}
+.lia{ width:50%; height: 10%; margin-left: 25%; margin-top:3%}
+.welcome{text-align: center; text-decoration: underline; transition: all 0.2s; font-style: italic; font-family: Itim; font-size: 2.4vw; color: rgba(0, 0, 139, 0.774);}
+.about{font-size: 1.5vw; font-family: Itim; color: rgb(170, 159, 159);}
+.welcome:hover{ font-size: 2.6vw; color: rgb(94, 163, 185);}
+.collcard{width: 100%; height: 15vw; margin-top: 6%; transition: transform 1s;}
+.collcardimg{height: 15vw;}
+.collcard:hover{transform: scale(1.5,1.5); z-index: 999; border: 1px solid black; box-shadow: 10px 10px 5px grey;}
+.mor{display: block; font-size: 2vw; color: rgb(255, 230, 0); font-family: Itim; text-align: center; transition: 1s;}
+.moresymbol{color:rgb(238, 155, 0); font-size: 2vw; font-family: Itim;}
+.mor:hover{font-size:2.4vw; color: rgba(255, 174, 0, 0.877);}
+.successcrousel{display: block; position: relative; height: 30vw; width:70%; border: 1px solid black; box-shadow: 2vw 2vw 1vw grey;}
+.innnersuccesscrousel{width: 100%;  margin-top: 1%;}
+.crouselimg{height: 28vw; width: 100%; transition: all 1.5s;}
+.crouselimg:hover{ transform: scale(1.7,1); }
+.glimpcrousel{height: 30vw;}
+.glimpimg{width:95%; height: 27vw; box-shadow: 20px 20px 10px grey;}
+.locationcol{width:50%}
+.locationmap{width: 40vw; height: 30vw;}
+.locationimg{width:100%; height: 20%;}
+
+/* responsive */
+@media screen and (max-width:600px) {
+  .headi, .detail, .welcome, .mor, .moresymbol{font-size:3.5vw;}
+  .detail:hover, .welcome:hover{font-size:4vw;}
+  .about{font-size:2.5vw}
+  .mor:hover{font-size:4vw}
+}
+</style>
+
+{% endblock css %}
+
+
+{% block body %}
+<div class="headi">Gallery</div>
+<div class="container">
+    <div class="row">
+      {% for i in gallery %}
+      <div class="col-4 col-sm-6 col-md-4 col-lg-4">
+        <div class="card collcard" >
+          <img src="/media/{{i.Image}}" class="collcardimg img-fluid" alt="...">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a href="#" class="mor">More  <span class="moresymbol"> &NestedGreaterGreater;</span></a>
+  </div>
+  {% endblock body %}

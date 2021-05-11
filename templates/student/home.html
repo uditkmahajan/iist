@@ -22,13 +22,20 @@
         .crouselimg:hover{ transform: scale(1.7,1); }
         .glimpcrousel{height: 30vw;}
         .glimpimg{width:95%; height: 27vw; box-shadow: 20px 20px 10px grey;}
+        .locationcol{width:50%}
+        .locationmap{width: 100%; height: 30vw;}
+        .locationimg{width:100%; height: 20%;}
+        .icon{color: rgba(0, 0, 255, 0.692);}
+        span{font-family: Itim; font-size: 1.5vw; }
+        .icon:hover{color: darkblue ;}
+        .form-control:hover{background-color: rgba(168, 166, 166, 0.541); transition: 1s;}
         
         /* responsive */
         @media screen and (max-width:600px) {
-          .headi, .detail, .welcome, .mor, .moresymbol{font-size:3.5vw;}
+          .headi, .detail, .welcome, .mor, .moresymbol, span{font-size:3.5vw;}
           .detail:hover, .welcome:hover{font-size:4vw;}
           .about{font-size:2.5vw}
-          .mor:hover{font-size:4.5vw}
+          .mor:hover{font-size:4vw}
         }
 </style>
 
@@ -147,8 +154,78 @@
       <a href="#" class="mor">More Activities<span class="moresymbol"> &NestedGreaterGreater;</span></a>
     </div>
 
-    
+    <!-- location -->
+    <div class="headi">Location</div>
+  <div class="location container">
+     <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 locationcol">
+           <iframe class="locationmap" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3682.656989871442!2d75.77919941427484!3d22.62928063659207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1620728680415!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 locationcol mt-2">
+                  <img class="locationimg mb-3" src="/media/iist.png" alt="">
+                  <div style="display: inline;">
+                    <i class="icon fas fa-map-marker-alt fa-lg "></i> <span>Location : Opposite Indian Institute of Management,
+                      Rau - Pithampur Rd, Rau, Indore,
+                      Madhya Pradesh 453331</span></div> <br> <br>
+                  <div style="display: inline; " >
+                    <i class="icon fas fa-phone-alt fa-lg"></i> <span>Toll Free : 1800 103 3069</span></div> <br><br>
+                    <div style="display: inline;" >
+                      <i class="icon fas fa-envelope fa-lg"></i> <span>Email : admissions@indoreinstitute.com</span></div> 
+         </div>
+    </div>
+  </div>
   
-    
+  <div class="headi">For any Enquiry, Contact Us</div>
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="First and last name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Email</label>
+            <input type="email" class="form-control" id="inputPassword4" placeholder="name@gmail.com">
+          </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="House no./street no. Area">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">City</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Indore">
+        </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Phone Number</label>
+            <input type="number" class="form-control" id="inputCity" placeholder="1234567890">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Course</label>
+            <select id="inputState" class="form-control">
+              <option selected>B.Tech</option>
+              <option>BBA</option>
+              <option>MBA</option>
+              <option>B.Pharmacy</option>
+              <option>M.Pharmacy</option>
+              <option>B.A</option>
+              <option>B.Com(Hons.)</option>
+              <option>B.Sc.</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row"> 
+          <div class="form-group col-md-12">
+            <label for="inputAddress2">Query or Message</label>
+            <input type="text" class="form-control" id="inputAddress2" >
+          </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
   
 {% endblock body %}

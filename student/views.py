@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import Crousel, Story, Activity, Collaboration
+from .models import Crousel, Story, Activity, Collaboration, Gallery
 # Create your views here.
 
 def home(request) :
@@ -8,3 +8,7 @@ def home(request) :
     activity=Activity.objects.order_by("Order")
     collaboration=Collaboration.objects.order_by("Order")
     return render(request,"student/home.html",{"crousel":crousel,"activity":activity,"story":story,"collabortion":collaboration})
+
+def gallery(request) :
+    gallery=Gallery.objects.order_by("Order")
+    return render(request,"student/gallery.html",{"gallery":gallery})

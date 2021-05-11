@@ -30,3 +30,10 @@ class Crousel(models.Model) :
     Image=models.ImageField(upload_to="crousel/")
     def __str__(self) :
         return self.Detail
+
+class Gallery(models.Model) :
+    Detail=models.CharField(max_length=100,default=" ")
+    Order=models.IntegerField(default=0)
+    Image=models.ImageField(upload_to="gallery/")
+    def __str__(self) :
+        return self.Detail
