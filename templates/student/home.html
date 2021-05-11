@@ -1,0 +1,154 @@
+{% extends 'student/basic.html' %}
+{% block title %}IIST IIP IIMR{% endblock title %}
+{% block css %}
+ 
+<style>
+        .headi{font-size: 2.3vw; text-align: center; text-decoration: underline; margin-top: 3.5%; font-family: Itim; color: red;}
+        .detail{font-family: Itim; font-size: 3vw; color:orangered; text-decoration: underline; transition: all 0.3s;}
+        .detail:hover{color: yellow; font-size: 3.5vw;}
+        .lia{ width:50%; height: 10%; margin-left: 25%; margin-top:3%}
+        .welcome{text-align: center; text-decoration: underline; transition: all 0.2s; font-style: italic; font-family: Itim; font-size: 2.4vw; color: rgba(0, 0, 139, 0.774);}
+        .about{font-size: 1.5vw; font-family: Itim; color: rgb(170, 159, 159);}
+        .welcome:hover{ font-size: 2.6vw; color: rgb(94, 163, 185);}
+        .collcard{width: 100%; height: 15vw; margin-top: 6%; transition: transform 1s;}
+        .collcardimg{height: 15vw;}
+        .collcard:hover{transform: scale(1.5,1.5); z-index: 999; border: 1px solid black; box-shadow: 10px 10px 5px grey;}
+        .mor{display: block; font-size: 2vw; color: rgb(255, 230, 0); font-family: Itim; text-align: center; transition: 1s;}
+        .moresymbol{color:rgb(238, 155, 0); font-size: 2vw; font-family: Itim;}
+        .mor:hover{font-size:2.4vw; color: rgba(255, 174, 0, 0.877);}
+        .successcrousel{display: block; position: relative; height: 30vw; width:70%; border: 1px solid black; box-shadow: 2vw 2vw 1vw grey;}
+        .innnersuccesscrousel{width: 100%;  margin-top: 1%;}
+        .crouselimg{height: 28vw; width: 100%; transition: all 1.5s;}
+        .crouselimg:hover{ transform: scale(1.7,1); }
+        .glimpcrousel{height: 30vw;}
+        .glimpimg{width:95%; height: 27vw; box-shadow: 20px 20px 10px grey;}
+        
+        /* responsive */
+        @media screen and (max-width:600px) {
+          .headi, .detail, .welcome, .mor, .moresymbol{font-size:3.5vw;}
+          .detail:hover, .welcome:hover{font-size:4vw;}
+          .about{font-size:2.5vw}
+          .mor:hover{font-size:4.5vw}
+        }
+</style>
+
+{% endblock css %}
+
+{% block body %}
+   <div class="headi">Our Campus</div>
+   <!-- crousel -->
+   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+            {% for i in crousel %}
+                 <a href="#"><img src="media/{{i.Image}}" class="d-block w-100" style="height: 400px;" alt="{{i.Detail}}"></a>
+                 <div class="carousel-caption d-md-block">
+                  <h5 class="detail"><strong >{{i.Detail}}</strong></h5>
+                </div>
+                 {%  if not forloop.last %}
+               </div><div class="carousel-item" data-bs-interval="3000">
+                 {% endif %}
+           {% endfor %}
+    </div>
+   </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+        
+  <!-- learn implement achive -->
+    <div style="display: block;">
+      <img class="lia" src="media/lia.png" alt="">
+    </div>
+ 
+    <!-- about us -->
+    <div class="container mt-3" style="background-color: rgba(49, 49, 49, 0.062);">
+         <div class="welcome">WELCOME TO INDORE INSTITUTE OF SCIENCE AND TECHNOLOGY, PHARMACY AND MANAGEMENT</div>
+         <div class="about">
+          <strong>ABOUT IIST/IIP/IIMR: </strong> Indore Institute of Science &Technology (IIST) is established in the year 2003, is amongst the Top 5 Engineering Colleges of Indore. The Engineering Institute is approved by All India Institute of Technical Education (AICTE), New Delhi and affiliated to RGPV Bhopal, offering Bachelor’s degree in CSE, IT, EC, Civil, Chemical and Mechanical Engineering and Master’s Degree in CSE, Machine Design and Digital Communication. The group’s Pharmacy Institute (IIP) is approved by AICTE and Pharmacy Council of India (PCI), New Delhi, Affiliated to RGPV Bhopal, offering Diploma (D. Pharm), Undergraduate (B. Pharm) and Post Graduate programs (M. Pharm in Pharmaceutics & Quality Assurance). The group’s Management Institute (IIMR) is approved by AICTE, Delhi; Department of Technical Education and Department of Higher Education, Government of M.P. and is affiliated to Devi Ahilya Vishwa Vidhyalaya, Indore, offering MBA, BBA - Foreign Trade, BBA - Plain, B.Com (Hons.), BSc (Computer Science, Maths and Statistics), B.A.(Hons.).
+             <br>
+          At IIST group of institutions, we are committed to enhancing the employability Quotient of the students with Holistic Development. Towards this objective, we have dedicated Special Interest Groups (SIGs) on emerging areas apart from 23 clubs for extracurricular activities, games & sports. The various SIGs focus on the Capacity building of the faculty and students and enable them to take up the activities related to training, research and development in the emerging fields. The Career Development Cell (CDC) helps in enhancing the Aptitude and Soft Skills of the students in order to strengthen them to get better career opportunity. The Placement, Entrepreneurship and Career Advancement (PECA) Cell helps them in activities other than placements like Entrepreneurship Development or equipping themselves for higher studies etc. IIST group of Institutes has a very good Industry-Academia tie ups to bridge the gap between the requirements of the Industry and university driven regular curriculum, through International/National Certification courses.
+          <br>
+          Code of Competence and emphasis on quality at every level right from the Institute canteen (wherein we provide organic vegetables freshly grown in our agricultural fields under Green Waves Club) to class room teaching by adopting best practices, is our prime motto.
+         </div>    
+    </div>
+
+    <!-- our succes story -->
+    <div class="headi">Our Success</div>
+    <div class="successcrousel container">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner innnersuccesscrousel">
+          <div class="carousel-item active">
+            {% for i in story %}
+            <img class="crouselimg" src="/media/{{i.Image}}" class="d-block w-100" alt="...">
+          {% if not last.forloop %} </div> <div class="carousel-item">
+          {% endif %}
+          {% endfor %} </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- collarboration -->
+    <div class="headi">Collarboration with Industry and Institute</div>
+    <div class="container">
+      <div class="row">
+        {% for i in collabortion %}
+        <div class="col-4 col-sm-6 col-md-4 col-lg-4">
+          <div class="card collcard" >
+            <img src="/media/{{i.Image}}" class="collcardimg img-fluid" alt="...">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a href="#" class="mor">More Collarboration <span class="moresymbol"> &NestedGreaterGreater;</span></a>
+    </div>
+
+    <!-- glimpses -->
+    <div class="headi">Glimpse of Activities</div>
+    <div id="carouselExampleControls " class="carousel slide mt-3" data-ride="carousel">
+      <div class="carousel-inner container">
+         <div class="carousel-item active glimpcrousel" >
+             <div class="row">
+              {% for i in activity %}
+              <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+             <img class="d-block glimpimg" src="/media/{{i.Image}}" alt="First slide">
+             </div>
+             {% if forloop.counter|divisibleby:2 and not forloop.last %}
+               </div> </div> <div class="carousel-item glimpcrousel"> <div class="row">
+             {% endif %}
+             {% endfor %}
+          </div>
+          </div>
+         </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+      <a href="#" class="mor">More Activities<span class="moresymbol"> &NestedGreaterGreater;</span></a>
+    </div>
+
+    
+  
+    
+  
+{% endblock body %}

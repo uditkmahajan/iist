@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <!-- w3 bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <!-- font awesom -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{% block title %} {% endblock title %}</title>
+    <!-- rgb(26, 26, 100); -->
+    <style>
+      .navbar{align-items: center; background-color:rgba(17, 17, 179, 0.719) ; z-index: 999; position: fixed; width: 100%; height: 5vw; display: flex; justify-content: space-around;} 
+      .link{color:rgb(245, 245, 245); font-size: 1.8vw;  font-family: Itim; transition: font-size 0.2s; margin: 20px; }
+      .link:hover{ color:rgb(202, 213, 233); font-size: 2vw;  }
+      .footer{background-color:rgba(17, 17, 179, 0.719) ; width: 100%; z-index: 999; margin-top: 30px; }
+      .heading{font-size: 1.8vw; color: white; font-family: Itim ; text-decoration: underline;}
+      .heading:hover{font-size:2vw; color: rgb(139, 208, 231);}
+      .inner, .inner a{ font-size: 1.5vw; color: gainsboro; font-family: Itim; }
+      .inner a:hover {color: rgb(11, 0, 114); transition: all 1s; }
+      @media screen and (max-width: 1300px ) {
+        .link{font-size: 1.5vw; margin: 25px;}
+      }
+      @media screen and (max-width: 600px) {
+         .heading{font-size:3vw}
+         .heading:hover{font-size: 4vw;}
+         .inner, .inner a{font-size:2vw;}
+      }
+    </style>
+    {% block css %}
+    {% endblock css %}
+</head>
+  
+
+<body>
+      <!-- navigation bar  -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid" style="position: absolute; "">
+          
+          <button class="navbar-toggler" style="background-color: cornsilk  ;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+           
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">About Us </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">Colleges </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">Facilities </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link"> Gallery</span> </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">Admissions</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">Placements </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">Events </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">360 </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><span class="link">Career</span></a>
+                </li>
+
+              </ul>
+              
+            
+          </div>
+        </div>
+      </nav>`
+      <!-- nav bar ends -->
+
+      {% block body %}  {% endblock body %}
+ <!-- footer -->
+      <footer class="footer" style="position: absolute;">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
+                <div class="heading">Privacy Policies</div>
+                  <div class="inner">
+                   <a href=""> Privacy Policies</a> <br>
+                  <a href=""> Disclaimer</a> <br>
+                  <a href=""> Sitemap</a> <br>
+                  <a href="">Tender</a>
+              </div>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
+                  <div class="heading">CONTACT US</div>
+                  <div class="inner">Toll Free: 1800 103 3069 <br>
+                    IIST: 8224071000 / 2000, 8225071000 <br>
+                    IIP: 8224074000 <br>
+                    IIMR: 8224073000 <br>
+                    admissions@indoreinstitute.com <br>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram "></a>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-facebook"></a></div>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
+                  <div class="inner">© 2019. All rights reserved <br>
+                    Opposite Indian Institute of Management, <br>
+                    Rau - Pithampur Rd, Rau, Indore, <br>
+                    Madhya Pradesh 453331   <br>
+                    
+                    Last Updated on - 11 May 2021</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+ 
+</body>
+</html>
