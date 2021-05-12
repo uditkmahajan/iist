@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+     <!-- aos -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
@@ -87,7 +88,7 @@
       <footer class="footer" style="position: absolute;">
         <div class="container">
           <div class="row">
-            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" data-aos="fade-down-right" data-aos-duration="500" data-aos-easing="linear">
                 <div class="heading">Privacy Policies</div>
                   <div class="inner">
                    <a href=""> Privacy Policies</a> <br>
@@ -96,7 +97,7 @@
                   <a href="">Tender</a>
               </div>
             </div>
-            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" data-aos="fade-down" data-aos-duration="500" data-aos-easing="linear">
                   <div class="heading">CONTACT US</div>
                   <div class="inner">Toll Free: 1800 103 3069 <br>
                     IIST: 8224071000 / 2000, 8225071000 <br>
@@ -110,7 +111,7 @@
                     <a href="#" class="fa fa-youtube" style="margin-right: 3%;"></a>
             </div>
             </div>
-            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" data-aos="fade-down-left" data-aos-duration="500" data-aos-easing="linear">
                   <div class="inner">© 2019. All rights reserved <br>
                     Opposite Indian Institute of Management, <br>
                     Rau - Pithampur Rd, Rau, Indore, <br>
@@ -121,6 +122,10 @@
           </div>
         </div>
       </footer>
- 
+ <!-- data aos script  -->
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
 </body>
 </html>
