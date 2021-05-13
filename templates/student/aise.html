@@ -25,35 +25,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>{% block title %} {% endblock title %}</title>
     <!-- rgb(26, 26, 100); -->
+    
     <style>
-      
-      *{box-sizing: border-box; }
-      .navigation{height: 5vw; background-color:rgba(17, 17, 179, 0.719); display: flex; width: 100%;  justify-content:space-around;}
-      .link{color:rgb(245, 245, 245); font-size: 2.3vw;  font-family: Itim; transition: font-size 0.5s;  }
-      .link:hover{ color:rgb(76, 138, 253); font-size: 2.8vw;  }
-      
-      .drop-link{color: white; margin-top:5%; margin-left: 2%; font-family: Itim;}
-      .drop-link:hover{color:rgb(76, 138, 253);  margin-top:5%; }
-      #colleges{visibility: hidden; width: 100%; background-color:rgba(17, 17, 179, 0.719);font-size: 1.5vw; font-family: Itim; display: flex; flex-direction: column;}
-      #college:hover > #colleges{visibility: visible;}
-      
+    /* navbar */
+.dropbtn {
+  background-color:rgba(17, 17, 179, 0.719) ;
+  font-size: 2vw;
+  height: 100%;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+    *{box-sizing: border-box;}
+      .navbar{background-color:rgba(17, 17, 179, 0.719);  z-index: 999; position: sticky; width: 100%; margin-top: 0px;}
       .footer{background-color:rgba(17, 17, 179, 0.719) ; width: 100%; z-index: 999; margin-top: 30px; }
       .heading{font-size: 1.8vw; color: white; font-family: Itim ; text-decoration: underline;}
       .heading:hover{font-size:2vw; color: rgb(139, 208, 231);}
       .inner, .inner a{ font-size: 1.5vw; color: gainsboro; font-family: Itim; }
       .inner a:hover {color: rgb(11, 0, 114); transition: all 1s; }
-
-      @media screen and (max-width: 1100px ) {
-        .navigation{height: 6vw;}
-        .link{font-size: 2.3vw;}
-        .link:hover{font-size: 3vw;  }
-        #colleges{font-size: 1.8vw;}
+      @media screen and (max-width: 1300px ) {
+        .link{font-size: 1.5vw; margin: 25px;}
       }
       @media screen and (max-width: 600px) {
-         .navigation{height: 10vw;}
-         .link{font-size: 2.5vw;}
-         .link:hover{ font-size: 3vw;  }
-         #colleges{font-size: 1.8vw;}
          .heading{font-size:3vw}
          .heading:hover{font-size: 3.5vw;}
          .inner, .inner a{font-size:2vw;}
@@ -66,52 +91,51 @@
 
 <body>
       <!-- navigation bar  -->
+      <nav class="navbar navbar-expand-lg navbar-light mt-0 fixed-top ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropbtn" href="/">Home</a>
+            </li>
+            <li class="nav-item active dropdown">
+              <button class="nav-link dropbtn" >Colleges<span class="sr-only">(current)</span></button>
+              <div class="dropdown-content">
+                <a href="/">IIST</a>
+                <a href="/">IIP</a>
+                <a href="/">IIMR</a>
+              </div>
+            </li>
+            <li class="nav-item active dropdown">
+              <button class="nav-link dropbtn" >Facilities<span class="sr-only">(current)</span><i class="fas fa-chevron-circle-down fa-xs"></i> </button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li class="nav-item active dropdown">
+              <button class="nav-link dropbtn" >Gallery<span class="sr-only">(current)</span></button>
+              <div class="dropdown-content">
+                <a href="/gallery">Video Gallery</a>
+                <a href="/gallery">Image Gallery</a>
+              </div>
+            </li>
+            <li class="nav-item active dropdown">
+              <button class="nav-link dropbtn" href="#">About Us<span class="sr-only">(current)</span></button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- nav bar ends -->
 
-      <div class="navigation sticky-top">
-      
-        <div> 
-          <a class="nav-link" href="/"><span class="link">Home</span></a>
-        </div>
-        <div id="college">
-            <a class="nav-link" href="/"><span class="link">Colleges</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
-            <div id="colleges">
-            <a href="/" class="drop-link">IIST</a>
-            <a href="/" class="drop-link">IIP</a>
-            <a href="/" class="drop-link">IIMR</a>
-            </div>
-       </div>  
-       <div id="college" >
-            <a class="nav-link" href="/"><span class="link">Facilities</span></a>
-            <div id="colleges">
-            <a href="/" class="drop-link">Smart Campus</a>
-            <a href="/" class="drop-link">Laboratories</a>
-            <a href="/" class="drop-link">Computer Lab</a>
-            <a href="/" class="drop-link">Library</a>
-            <a href="/" class="drop-link">Hostel</a>
-            <a href="/" class="drop-link">Sports Facilities </a>
-            <a href="/" class="drop-link">Transportation</a>
-            <a href="/" class="drop-link">Canteen</a>
-            <a href="/" class="drop-link">Auditioriums</a>
-            <a href="/" class="drop-link">Seminar Halls</a>
-            <a href="/" class="drop-link">Workshops</a>
-          </div>
-      </div>
-      <div id="college">
-          <a class="nav-link" href="/"><span class="link">Gallery</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
-          <div id="colleges">
-          <a href="/gallery" class="drop-link">Image Gallery</a>
-          <a href="/" class="drop-link">Video Gallery</a>
-          </div>
-      </div>    
-      <div id="college">
-        <a class="nav-link" href="/"><span class="link">About Us</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
-        <div id="colleges">
-        <a href="/gallery" class="drop-link">Message From Management</a>
-        <a href="/" class="drop-link">About Director General</a>
-        </div>
-    </div>  
-        <a class="nav-link" href="/"><span class="link">Placements</span></a>
-      </div>
       {% block body %}  {% endblock body %}
  <!-- footer -->
       <footer class="footer" style="position: absolute;">

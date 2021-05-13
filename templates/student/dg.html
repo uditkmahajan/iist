@@ -1,7 +1,7 @@
 {% extends 'student/basic.html' %}
 {% block title %} Profile of Director General {% endblock title %}
 
-{% block css %} 
+{% block css %}
     <style>
       .headi{font-size: 2.3vw; text-align: center; text-decoration: underline; margin-top: 3.5%; font-family: Itim; color: red;}
      .image{width: 100%; height: 35vw; margin-top: 1.5%;}
@@ -17,14 +17,34 @@
      .glimpcrousel{height: 30vw;}
      .glimpimg{width:95%; height: 27vw; box-shadow: 2vw 2vw 1vw grey;}
 
+
+      @media screen and (max-width:1200px) {
+          .dgcard{width:40%; margin-left:30%; height: 50vw;}
+          }
+       @media screen and (max-width:800px) {
+          .dgcard{height: 55vw;}
+          }
+
+      @media screen and (max-width:600px) {
+       .headi{font-size:4vw;}
+      .image{ height: 50vw;}
+      .dgcard{width: 55%; height: 100vw; margin-left:22%; box-shadow: 3vw 3vw 2vw grey;}
+      .dgimage{width: 100%; height: 60%;}
+     .dgtext{font-size: 2.5vw; margin-top:1%;}
+      .profilecontainer, .message{width:95%;}
+      .contain, .message{font-size:2.5vw;}
+      .glimpcrousel{height: 40vw;}
+     .glimpimg{width:98%; height: 37vw; box-shadow: 3vw 3vw 2vw grey;}
+
+      }
     </style>
 {% endblock css %}
 
 {% block body %}
-  
-      <img class="image" src="/media/main.jpg" alt="">
+
+      <img class="image" src="/media/main.jpg" alt="" data-aos="flip-right" data-aos-duration="2000" data-aos-easing="linear">
       <div class="headi">Our Director General</div>
-    <div class="card dgcard mt-2">
+    <div class="card dgcard mt-2" data-aos="zoom-in-up" data-aos-duration="500" data-aos-easing="linear">
         <img src="/media/DG.jpg" class="card-img-top dgimage" alt="...">
         <div class="card-body dgcardbody">
             <p class="card-text dgtext">Shri Arun S. Bhatnagar <br>
@@ -41,23 +61,23 @@
                 </div>
         </div>
         </div>
-        
+
         <!-- about -->
           <div class="headi">Profile Of Director General</div>
           <div class="container profilecontainer">
-          <div class="contain">
+          <div class="contain" data-aos="fade-down-left" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="linear">
             Shri Arun S Bhatnagar is a Senior Govt. of India bureaucrat of 1983 batch with overall experience of 45 years. Started his career in 1975 as an Assistant Professor in Economics. After appearing in the All India Civil Services Exam in 1982, joined IRS in 1983. Worked in different parts of the country and handled highly sensitive, complicated cases of IT. Also worked as Addl. Director General of National Academy of Direct Taxes (apex training institute for imparting training to IRS trainees as well as senior bureaucrats). Headed and coordinated international engagements with Foreign Universities & Governments as well as managed faculty and infrastructure of the Institute. Spearheaded Regional Training Institute (RTI), Bangalore as Commissioner of Income Tax. Superseded the batch when promoted from Deputy Commissioner to Joint Commissioner of IT due to his outstanding performance.
-          </div>  
-          <div class="contain"> Shri Bhatnagar superannuated in 2015 from the post of Principal Commissioner of Income Tax from Delhi. Joined corporate sector as an advisor for business development & marketing strategy from 2015 to 2017.
+          </div>
+          <div class="contain" data-aos="fade-down-right" data-aos-delay="1000" data-aos-duration="1000" data-aos-easing="linear"> Shri Bhatnagar superannuated in 2015 from the post of Principal Commissioner of Income Tax from Delhi. Joined corporate sector as an advisor for business development & marketing strategy from 2015 to 2017.
             Shri Bhatnagar was appointed as Director General of the group of Indore Educational Institutes i.e. Indore Institute of Science and Technology, Indore Institute of Pharmacy and Indore Institute of Management and Research, in December 2017.
             Shri Bhatnagar completed executive general management program from Indian Institute of Management, Bangalore as well as certified courses from Duke University and University of Maryland, USA. Was awarded for best practices instituted by Ministry of Finance, Govt. of India.
-          </div>           
-          <div class="contain"> Shri Bhatnagar's hobbies are poetry, meditation, reading and sports. About to be released is his collection of his poem "Sancheta Ke Shan" . DG sir has also been Invited as guest speaker on themes like 'spiritual management of life and work' , 'in pursuit of excellence', 'theory and practice of meditation', 'digital pedagogy' , 'how to achieve success in career', 'challenges before Indian economy' etc.
+          </div>
+          <div class="contain" data-aos="fade-down-left" data-aos-delay="1000" data-aos-duration="1000" data-aos-easing="linear"> Shri Bhatnagar's hobbies are poetry, meditation, reading and sports. About to be released is his collection of his poem "Sancheta Ke Shan" . DG sir has also been Invited as guest speaker on themes like 'spiritual management of life and work' , 'in pursuit of excellence', 'theory and practice of meditation', 'digital pedagogy' , 'how to achieve success in career', 'challenges before Indian economy' etc.
             Shri Bhatnagar is differentiated by an uncommon expertise in Economics combined with strong industry acumen, allowing him to view opportunities with a wide lens to identify business drivers, understand complex issues, take action and drive results. He is also a proud recipient of "Captain of Industry " award in the year 2019 by Hon'ble Chief Minister Of MP.
             Although Shri Bhatnagar has received numerous accolades for his work and achievements over years, he says his greatest reward is the love, affection and respect he has gained from the students across all disciplines. He is a true visionary who is currently leading IIST Group of Institutions with completely different ideologies with the objective of transforming the youth of today to be better professionals, better entrepreneurs and above all better human beings. Feel free to reach out to Shri Bhatnagar on his Linkedin profile.
           </div>
           </div>
-          
+
           <!-- crousel -->
           <div id="carouselExampleControls " class="carousel slide mt-5" data-ride="carousel" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="1000" data-aos-duration="1500">
             <div class="carousel-inner container ">
@@ -74,28 +94,28 @@
                 </div>
                 </div>
                </div>
-      
+
           </div>
-      
+
 
           <!-- message -->
           <div class="headi">Message From DG Desk</div>
           <div class="message container">
-            Dear Contributors, <br>
-            Education, in essence, should bring to the fore the inner and inherent potential of the student. Educational 
-            institute, therefore, has to distinguish itself by providing sound infrastructure for higher education to 
-            leverage knowledge and innovation. More so, since the society and the nation look up to these centres for 
-            fulfilment of their aspirations and expectations.Education, be it primary or higher,need to go beyond its 
-            scope of merely imparting information and skill.It is precisely here that educational institutes have to play 
+          <div class="contain" data-aos="fade-down-right" data-aos-duration="1000" data-aos-easing="linear">Dear Contributors, <br>
+            Education, in essence, should bring to the fore the inner and inherent potential of the student. Educational
+            institute, therefore, has to distinguish itself by providing sound infrastructure for higher education to
+            leverage knowledge and innovation. More so, since the society and the nation look up to these centres for
+            fulfilment of their aspirations and expectations.Education, be it primary or higher,need to go beyond its
+            scope of merely imparting information and skill.It is precisely here that educational institutes have to play
             a pivotal role. It is rightly said that the child is not vessel to be filled but a lamp to be lit. Besides proactively
              providing an environment conducive to foster and nurture the inherent potential of the students, the institute need
               to consciously promote an inquisitive spirit among the students. The students would then be able to get acquainted
-               with latest and upcoming research and inventions in science and technology. <div style="text-indent: 15vw;"> Hence, the institute has the onus of
-                providing a platform for overall development of ethical, moral and human aspects of the personality of the students. 
-                The teachers are to be epitome of all that is good and need to maintain a professional demeanour by embracing traits 
-                like honesty, integrity and sincerity. This would go long way in bringing aboutquantitative and qualitative expansion 
-                of the student personality. Let us, therefore, pledge ourselves to rebuilding our institution and thus live up to the 
-                expectations and the trust reposed in us. Let us make concerted and sincere efforts to restore the glory and eminence 
+               with latest and upcoming research and inventions in science and technology.</div>  <div class="contain" data-aos="fade-down-left" data-aos-duration="1000" data-aos-easing="linear" style="text-indent: 15vw;"> Hence, the institute has the onus of
+                providing a platform for overall development of ethical, moral and human aspects of the personality of the students.
+                The teachers are to be epitome of all that is good and need to maintain a professional demeanour by embracing traits
+                like honesty, integrity and sincerity. This would go long way in bringing aboutquantitative and qualitative expansion
+                of the student personality. Let us, therefore, pledge ourselves to rebuilding our institution and thus live up to the
+                expectations and the trust reposed in us. Let us make concerted and sincere efforts to restore the glory and eminence
                 to this institute. Together we march ahead to achieve the excellence.
           </div>
           </div>
