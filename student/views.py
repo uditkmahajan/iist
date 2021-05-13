@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import Crousel, Story, Activity, Collaboration, Gallery
+from .models import Crousel, Story, Activity, Collaboration, Gallery, DG
 # Create your views here.
 
 def home(request) :
@@ -12,3 +12,7 @@ def home(request) :
 def gallery(request) :
     gallery=Gallery.objects.order_by("Order")
     return render(request,"student/gallery.html",{"gallery":gallery})
+
+def dg(request) :
+    image=DG.objects.all()
+    return render(request,"student/dg.html",{"dgimage":image})

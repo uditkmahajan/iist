@@ -37,3 +37,6 @@ class Gallery(models.Model) :
     Image=models.ImageField(upload_to="gallery/")
     def __str__(self) :
         return self.Detail
+    
+class DG(models.Model) :
+    Image=models.ImageField(upload_to="dg/")
