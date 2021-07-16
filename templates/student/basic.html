@@ -27,15 +27,15 @@
     <!-- rgb(26, 26, 100); -->
     <style>
       
-      *{box-sizing: border-box; }
-      .navigation{height: 5vw; background-color:rgba(17, 17, 179, 0.719); display: flex; width: 100%;  justify-content:space-around;}
+      *{box-sizing: border-box; padding: 0; margin: 0;  }
+      .navigation{height: 5vw; background-color:rgba(17, 17, 179, 0.719); display: flex; justify-content:space-around;}
       .link{color:rgb(245, 245, 245); font-size: 2.3vw;  font-family: Itim; transition: font-size 0.5s;  }
       .link:hover{ color:rgb(76, 138, 253); font-size: 2.8vw;  }
       
       .drop-link{color: white; margin-top:5%; margin-left: 2%; font-family: Itim;}
       .drop-link:hover{color:rgb(76, 138, 253);  margin-top:5%; }
       #colleges{visibility: hidden; width: 100%; background-color:rgba(17, 17, 179, 0.719);font-size: 1.5vw; font-family: Itim; display: flex; flex-direction: column;}
-      #college:hover > #colleges{visibility: visible;}
+      #college:hover > #colleges{visibility: visible; z-index: 1000;}
       
       .footer{background-color:rgba(17, 17, 179, 0.719) ; width: 100%; z-index: 999; margin-top: 30px; }
       .heading{font-size: 1.8vw; color: white; font-family: Itim ; text-decoration: underline;}
@@ -49,6 +49,7 @@
         .link:hover{font-size: 3vw;  }
         #colleges{font-size: 1.8vw;}
       }
+
       @media screen and (max-width: 600px) {
          .navigation{height: 10vw;}
          .link{font-size: 2.5vw;}
@@ -60,7 +61,7 @@
       }
     </style>
     {% block css %}
-    {% endblock css %}
+    {% endblock css %}S
 </head>
 
 
@@ -73,7 +74,7 @@
           <a class="nav-link" href="/"><span class="link">Home</span></a>
         </div>
         <div id="college">
-            <a class="nav-link" href="/"><span class="link">Colleges</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
+            <a class="nav-link" href="#"><span class="link">Colleges</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
             <div id="colleges">
             <a href="/" class="drop-link">IIST</a>
             <a href="/" class="drop-link">IIP</a>
@@ -81,7 +82,7 @@
             </div>
        </div>  
        <div id="college" >
-            <a class="nav-link" href="/"><span class="link">Facilities</span></a>
+            <a class="nav-link" href="#"><span class="link">Facilities</span></a>
             <div id="colleges">
             <a href="/" class="drop-link">Smart Campus</a>
             <a href="/" class="drop-link">Laboratories</a>
@@ -97,22 +98,25 @@
           </div>
       </div>
       <div id="college">
-          <a class="nav-link" href="/"><span class="link">Gallery</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
+          <a class="nav-link" href="#"><span class="link">Gallery</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
           <div id="colleges">
           <a href="/gallery" class="drop-link">Image Gallery</a>
           <a href="/" class="drop-link">Video Gallery</a>
           </div>
       </div>    
       <div id="college">
-        <a class="nav-link" href="/"><span class="link">About Us</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
+        <a class="nav-link" href="#"><span class="link">About</span></a>   <!-- kabhi hum <a> ko hover krke colleges ko show karte to hum iist iisp iimr pe ja hi nahi sakte the kyoki wo <a> tag se bahar h-->
         <div id="colleges">
         <a href="/gallery" class="drop-link">Message From Management</a>
         <a href="/" class="drop-link">About Director General</a>
         </div>
     </div>  
-        <a class="nav-link" href="/"><span class="link">Placements</span></a>
+        <a class="nav-link" href="#"><span class="link">Placements</span></a>
       </div>
+
+      <div class="whole" style="overflow-x : hidden!important; width: 100%; ">
       {% block body %}  {% endblock body %}
+      </div>
  <!-- footer -->
       <footer class="footer" style="position: absolute;">
         <div class="container">
